@@ -113,8 +113,6 @@ impl Migration {
     ///
     /// The `SqlVariant` type is populated based on the backends
     /// that are being selected at compile-time.
-    ///
-    /// This function panics if the provided variant is empty!
     pub fn make_from(&self, variant: SqlVariant) -> String {
         variant.run_for(self)
     }

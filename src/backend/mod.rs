@@ -24,14 +24,12 @@ use crate::{types::Type, Migration};
 
 /// An enum describing all supported Sql flavours
 pub enum SqlVariant {
-    // #[cfg(feature = "sqlite3")]
+    #[cfg(feature = "sqlite3")]
     Sqlite,
     #[cfg(feature = "pg")]
     Pg,
     #[cfg(feature = "mysql")]
     Mysql,
-    #[doc(hidden)]
-    __Empty,
 }
 
 impl SqlVariant {
@@ -39,14 +37,10 @@ impl SqlVariant {
         match self {
             #[cfg(feature = "sqlite3")]
             SqlVariant::Sqlite => _migr.make::<Sqlite>(),
-
             #[cfg(feature = "pg")]
             SqlVariant::Pg => _migr.make::<Pg>(),
-
             #[cfg(feature = "mysql")]
             SqlVariant::Mysql => _migr.make::<MySql>(),
-
-            _ => panic!("You need to select an Sql variant!"),
         }
     }
 }
