@@ -95,13 +95,13 @@ pub mod integrations;
 #[cfg(feature = "diesel")]
 pub use integrations::*;
 
-pub mod backend;
-pub mod connectors;
-pub mod migration;
-pub mod table;
-pub mod types;
+mod backend;
+mod connectors;
+mod migration;
+mod table;
 
-pub use backend::SqlVariant;
+pub mod types;
+pub use backend::*;
 pub use migration::Migration;
 pub use table::{Table, TableMeta};
 
