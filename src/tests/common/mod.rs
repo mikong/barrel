@@ -64,13 +64,13 @@ fn pin_struct_layout() {
 #[test]
 fn default_render_text() {
     use self::WrappedDefault::*;
-    assert_eq!(format!("{}", Text("hello".into())), "hello".to_owned());
+    assert_eq!(format!("{}", AnyText("hello".into())), "hello".to_owned());
 }
 
 #[test]
 fn default_render_varchar() {
     use self::WrappedDefault::*;
-    assert_eq!(format!("{}", Varchar("hello")), "hello".to_owned());
+    assert_eq!(format!("{}", AnyText("hello")), "hello".to_owned());
 }
 
 #[test]

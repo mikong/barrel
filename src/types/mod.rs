@@ -1,10 +1,10 @@
 //! Types constructor module
 
 mod builders;
+mod defaults;
 mod impls;
 
 /// Export all builder functions
 pub use self::builders::*;
-
-/// Export only the Type struct
-pub use self::impls::{BaseType, Type, WrappedDefault};
+pub use self::defaults::WrappedDefault;
+pub use self::impls::{BaseType, Type, WrapVec};
